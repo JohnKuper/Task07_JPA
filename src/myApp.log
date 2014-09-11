@@ -1,0 +1,13 @@
+2014-09-11 22:04:16,855 DEBUG [main] JohnKuper [MainClass.java:21] Found : Car: {id = 1name = Audi; model = R5; modification = 400hs}
+2014-09-11 22:04:16,863 DEBUG [main] JohnKuper [MainClass.java:21] Found : Car: {id = 2name = BMW; model = X3; modification = 250hs}
+2014-09-11 22:04:16,864 DEBUG [main] JohnKuper [MainClass.java:21] Found : Car: {id = 3name = Lada; model = Priora; modification = 90hs}
+2014-09-11 22:06:06,201 DEBUG [main] JohnKuper [MainClass.java:21] Found : Car: {id = 1; name = Audi; model = R5; modification = 400hs}
+2014-09-11 22:06:06,209 DEBUG [main] JohnKuper [MainClass.java:21] Found : Car: {id = 2; name = BMW; model = X3; modification = 250hs}
+2014-09-11 22:06:06,210 DEBUG [main] JohnKuper [MainClass.java:21] Found : Car: {id = 3; name = Lada; model = Priora; modification = 90hs}
+2014-09-11 22:11:03,740 DEBUG [main] JohnKuper [MainClass.java:21] Found : Car: {id = 1; name = Audi; model = R5; modification = 400hs}
+2014-09-11 22:11:03,748 DEBUG [main] JohnKuper [MainClass.java:21] Found : Car: {id = 2; name = BMW; model = X3; modification = 250hs}
+2014-09-11 22:11:03,748 DEBUG [main] JohnKuper [MainClass.java:21] Found : Car: {id = 3; name = Lada; model = Priora; modification = 90hs}
+2014-09-11 22:11:03,751 DEBUG [main] JohnKuper [MainClass.java:25] Found one car : Car: {id = 1; name = Audi; model = R5; modification = 400hs}
+2014-09-11 22:43:23,801 DEBUG [main] JohnKuper [MainClass.java:27] Found: Sale: {id = 1; car = Car: {id = 1; name = Audi; model = R5; modification = 400hs}; customer = Customer: {id = 1; name = Игорь; surname = Ежов; patronic = Владимирович; passport_series = 5705; passport_number = 032667; birthdate = 1970-04-16}; merchant = Merchant: {id = 1; name = Михаил; surname = Захаров; patronic = Олегович}; price = 50000.99; saleDate = 2014-09-11 00:00:00.0}
+2014-09-11 22:44:36,012 DEBUG [main] JohnKuper [MainClass.java:27] Found: Sale: {id = 1Car: {id = 1; name = Audi; model = R5; modification = 400hs}Customer: {id = 1; name = Игорь; surname = Ежов; patronic = Владимирович; passport_series = 5705; passport_number = 032667; birthdate = 1970-04-16}Merchant: {id = 1; name = Михаил; surname = Захаров; patronic = Олегович}; price = 50000.99; saleDate = 2014-09-11 00:00:00.0}
+2014-09-11 22:45:51,810 DEBUG [main] JohnKuper [MainClass.java:27] Found:  Sale: {id = 1 Car: {id = 1; name = Audi; model = R5; modification = 400hs}  Customer: {id = 1; name = Игорь; surname = Ежов; patronic = Владимирович; passport_series = 5705; passport_number = 032667; birthdate = 1970-04-16}  Merchant: {id = 1; name = Михаил; surname = Захаров; patronic = Олегович} ; price = 50000.99; saleDate = 2014-09-11 00:00:00.0} 
