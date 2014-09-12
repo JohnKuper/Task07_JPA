@@ -3,8 +3,11 @@ package com.johnkuper.main;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.johnkuper.daoimpl.SaleDAOImpl;
-import com.johnkuper.entity.Sale;
+import com.johnkuper.domain.CarDomain;
+import com.johnkuper.entity.Car;
+import com.johnkuper.mapper.EntityToDomainMapper;
+import com.johnkuper.tester.CarTester;
+import com.johnkuper.tester.StoreTester;
 
 public class MainClass {
 
@@ -12,9 +15,12 @@ public class MainClass {
 
 	public static void main(String[] args) {
 
+		// startCarTester();
+		// startStoreTester();
+		EntityToDomainMapper mapper = new EntityToDomainMapper();
+		mapper.runMapper(Car.class, CarDomain.class);
+
 		/*
-		 * CarDAOImpl carimpl = new CarDAOImpl();
-		 * 
 		 * List<Car> cars = carimpl.findAll(); for (Car car : cars) {
 		 * logger.debug("Found : {}", car); }
 		 * 
@@ -22,9 +28,27 @@ public class MainClass {
 		 * onecar);
 		 */
 
-		SaleDAOImpl saleimpl = new SaleDAOImpl();
-		Sale sale = saleimpl.findOne(1);
-		logger.debug("Found: {}", sale);
+		/*
+		 * SaleDAOImpl saleimpl = new SaleDAOImpl(); Sale sale =
+		 * saleimpl.findOne(1); logger.debug("Found: {}", sale);
+		 */
+	}
+
+	static void startCarTester() {
+
+		CarTester cartester = new CarTester();
+		// cartester.create("Chevrolet", "Corvette", "560hs", "Red");
+		// cartester.update(1, "Honda");
+		cartester.findAll();
+		cartester.findOne(6);
+		cartester.findByName("Audi");
+		// cartester.delete(1);
+	}
+
+	static void startStoreTester() {
+
+		StoreTester storetester = new StoreTester();
+		storetester.findItemsBetweenPrices();
 	}
 
 }

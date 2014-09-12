@@ -25,19 +25,24 @@ public class Car {
 	@Column(nullable = false, length = 100)
 	private String modification;
 
+	@Column(nullable = false, length = 30)
+	private String color;
+
 	public Car() {
 	}
 
-	public Car(String name, String model, String modification) {
+	public Car(String name, String model, String modification, String color) {
 		this.name = name;
 		this.model = model;
 		this.modification = modification;
+		this.color = color;
 	}
 
 	@Override
 	public String toString() {
 		return " Car: {id = " + id + "; name = " + name + "; model = " + model
-				+ "; modification = " + modification + "} ";
+				+ "; modification = " + modification + "; color = " + color
+				+ "} ";
 	}
 
 	public int getId() {
@@ -70,6 +75,14 @@ public class Car {
 
 	public void setModification(String modification) {
 		this.modification = modification;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
 	}
 
 }

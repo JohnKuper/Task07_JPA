@@ -7,6 +7,7 @@ create table if not exists cars (
 	name varchar(100) not null,
 	model varchar(100) not null,
 	modification varchar(100) not null,
+	color varchar(30) not null,
 	unique key mark_unique_key (name,model,modification)
 );
 
@@ -37,11 +38,14 @@ create table if not exists sales(
 	price decimal(11,2) ,
 	sale_date timestamp not null default current_timestamp(),
 	foreign key fk_car(id_car) references cars(id_car)
-	on delete set NULL,
+	on delete set NULL
+	on update cascade,
 	foreign key fk_customer(id_customer) references customers(id_customer)
-	on delete set NULL,
+	on delete set NULL
+	on update cascade,
 	foreign key fk_merchant(id_merchant) references merchants(id_merchant)
 	on delete set NULL
+	on update cascade
 );
 
 create table if not exists store(
@@ -50,7 +54,7 @@ create table if not exists store(
 	count int(3) unsigned,
 	price decimal(11,2),
 	testdrive_avaible bit default 0,
-	unique unique_id_car(id_car),
+	unique unique_id_car(id_car,price,testdrive_avaible),
 	foreign key fk_car(id_car) references cars(id_car)
 	on update cascade
 	on delete cascade
