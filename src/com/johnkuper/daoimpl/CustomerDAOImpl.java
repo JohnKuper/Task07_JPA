@@ -5,10 +5,12 @@ import java.util.List;
 import javax.persistence.TypedQuery;
 
 import com.johnkuper.daointerface.CustomerDAO;
+import com.johnkuper.domain.CustomerDomain;
 import com.johnkuper.entity.Customer;
 
-public class CustomerDAOImpl extends GenericDAOImpl<Customer, Integer>
-		implements CustomerDAO {
+public class CustomerDAOImpl extends
+		GenericDAOImpl<Customer, CustomerDomain, Integer> implements
+		CustomerDAO {
 
 	@Override
 	public List<Customer> findBySurname(String surname) {

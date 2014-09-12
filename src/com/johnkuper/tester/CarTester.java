@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.johnkuper.daoimpl.CarDAOImpl;
+import com.johnkuper.domain.CarDomain;
 import com.johnkuper.entity.Car;
 
 public class CarTester {
@@ -16,37 +17,36 @@ public class CarTester {
 	public void create(String name, String model, String modification,
 			String color) {
 
-		Car car = new Car(name, model, modification, color);
-		carimpl.create(car);
-		logger.debug("Create: {}", car);
+		CarDomain cardomain = new CarDomain(name, model, modification, color);
+		carimpl.create(cardomain);
+		logger.debug("Test car create: {}", cardomain);
 	}
 
 	public void update(int id, String name) {
 
-		Car car = carimpl.findOne(id);
-		car.setName(name);
-		carimpl.update(car);
-		logger.debug("Update: {}", car);
+		CarDomain cardomain = carimpl.findOne(id);
+		cardomain.setCar_mark(name);
+		carimpl.update(cardomain);
+		// logger.debug("Update: {}", cardomain);
 	}
 
 	public void findAll() {
 
-		List<Car> cars = carimpl.findAll();
-		for (Car car : cars) {
-			logger.debug("Found: {}", car);
+		List<CarDomain> cardomains = carimpl.findAll();
+		for (CarDomain cardomain : cardomains) {
+			logger.debug("Found: {}", cardomain);
 		}
 	}
 
 	public void findOne(int id) {
 
-		Car car = carimpl.findOne(id);
-		logger.debug("Found one car : {}", car);
+		CarDomain cardomain = carimpl.findOne(id);
+		logger.debug("Found one domain car: {}", cardomain);
 	}
 
 	public void delete(int id) {
 
-		Car car = carimpl.delete(1);
-		logger.debug("Deleted: {}", car);
+		carimpl.delete(1);
 	}
 
 	public void findByName(String name) {

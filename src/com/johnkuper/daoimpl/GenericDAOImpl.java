@@ -1,6 +1,7 @@
 package com.johnkuper.daoimpl;
 
 import java.lang.reflect.ParameterizedType;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -11,21 +12,34 @@ import javax.persistence.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.johnkuper.daointerface.DomainObject;
 import com.johnkuper.daointerface.GenericDAO;
+import com.johnkuper.mapper.OrikaMapper;
 
-public class GenericDAOImpl<Model, IdType> implements GenericDAO<Model, IdType> {
+public class GenericDAOImpl<Entity, Domain extends DomainObject, IdType>
+		implements GenericDAO<Entity, Domain, IdType> {
 
 	protected EntityManager entityManager;
 
-	protected Class<Model> entityType;
+	protected Class<Entity> entityType;
+	protected Class<Domain> domainType;
+	protected static OrikaMapper mapper;
+	private String entityName;
 
 	final static Logger logger = LoggerFactory.getLogger("JohnKuper");
 
 	@SuppressWarnings("unchecked")
 	public GenericDAOImpl() {
-		this.entityType = (Class<Model>) ((ParameterizedType) getClass()
+		this.entityType = (Class<Entity>) ((ParameterizedType) getClass()
 				.getGenericSuperclass()).getActualTypeArguments()[0];
 		getEntityManager();
+		this.domainType = (Class<Domain>) ((ParameterizedType) getClass()
+				.getGenericSuperclass()).getActualTypeArguments()[1];
+		getEntityManager();
+		if (mapper == null) {
+			mapper = new OrikaMapper();
+		}
+		entityName = entityType.getSimpleName();
 
 	}
 
@@ -37,9 +51,11 @@ public class GenericDAOImpl<Model, IdType> implements GenericDAO<Model, IdType> 
 	}
 
 	@Override
-	public void create(Model entity) {
-		logger.debug("--- Start 'create' method for {} entity ---",
-				entityType.getSimpleName());
+	public void create(Domain domain) {
+		logger.debug("--- Start 'create' method for {} entity ---", entityName);
+		logger.debug("Domain for create: {}", domain);
+		Entity entity = mapper.map(domain, entityType);
+		logger.debug("New {} entity: ", entity);
 		entityManager.getTransaction().begin();
 		entityManager.persist(entity);
 		entityManager.getTransaction().commit();
@@ -47,41 +63,54 @@ public class GenericDAOImpl<Model, IdType> implements GenericDAO<Model, IdType> 
 	}
 
 	@Override
-	public Model update(Model entity) {
+	public void update(Domain domain) {
 		logger.debug("--- Start 'update' method for {} entity ---",
 				entityType.getSimpleName());
+		logger.debug("Domain for update {}", domain);
 		entityManager.getTransaction().begin();
+		Entity entity = mapper.map(domain, entityType);
 		entityManager.merge(entity);
+		logger.debug("New entity is: {}", entity);
 		entityManager.getTransaction().commit();
-		return entity;
 	}
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<Model> findAll() {
+	public List<Domain> findAll() {
 		logger.debug("--- Start 'findAll' method for {} entity ---",
 				entityType.getSimpleName());
 		Query query = entityManager.createQuery("SELECT entity FROM "
 				+ entityType.getName() + " entity");
-		return query.getResultList();
+		List<Entity> entities = query.getResultList();
+		List<Domain> domains = new ArrayList<Domain>();
+		if (entities.size() != 0) {
+			for (Entity entity : entities) {
+				domains.add(mapper.map(entity, domainType));
+			}
+		}
+		return domains;
 	}
 
 	@Override
-	public Model findOne(IdType id) {
+	public Domain findOne(IdType id) {
 		logger.debug("--- Start 'findOne' method for {} entity ---",
 				entityType.getSimpleName());
-		return entityManager.find(entityType, id);
+		Entity entity = entityManager.find(entityType, id);
+		logger.debug("Found entity: {}", entity);
+		Domain domain = mapper.map(entity, domainType);
+		return domain;
 	}
 
 	@Override
-	public Model delete(IdType id) {
+	public void delete(IdType id) {
 		logger.debug("--- Start 'delete' method for {} entity ---",
 				entityType.getSimpleName());
-		Model entity = findOne(id);
+		Domain domain = findOne(id);
+		Entity entity = entityManager.find(entityType, domain.getId());
+		logger.debug("Entity for delete: {}", entity);
 		entityManager.getTransaction().begin();
 		entityManager.remove(entity);
 		entityManager.getTransaction().commit();
-		return entity;
 	}
 
 }

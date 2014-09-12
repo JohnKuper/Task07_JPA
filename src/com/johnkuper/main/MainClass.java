@@ -3,10 +3,8 @@ package com.johnkuper.main;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.johnkuper.domain.CarDomain;
-import com.johnkuper.entity.Car;
-import com.johnkuper.mapper.OrikaMapper;
 import com.johnkuper.tester.CarTester;
+import com.johnkuper.tester.SaleTester;
 import com.johnkuper.tester.StoreTester;
 
 public class MainClass {
@@ -16,9 +14,10 @@ public class MainClass {
 	public static void main(String[] args) {
 
 		// startCarTester();
+		startSaleTester();
 		// startStoreTester();
-		OrikaMapper mapper = new OrikaMapper();
-		//mapper.runMapper(Car.class, CarDomain.class);
+		// OrikaMapper mapper = new OrikaMapper();
+		// mapper.runMapper(Car.class, CarDomain.class);
 
 		/*
 		 * List<Car> cars = carimpl.findAll(); for (Car car : cars) {
@@ -38,10 +37,10 @@ public class MainClass {
 
 		CarTester cartester = new CarTester();
 		// cartester.create("Chevrolet", "Corvette", "560hs", "Red");
-		// cartester.update(1, "Honda");
+		// cartester.update(2, "Honda");
 		cartester.findAll();
-		cartester.findOne(6);
-		cartester.findByName("Audi");
+		// cartester.findOne(2);
+		// cartester.findByName("Audi");
 		// cartester.delete(1);
 	}
 
@@ -49,6 +48,12 @@ public class MainClass {
 
 		StoreTester storetester = new StoreTester();
 		storetester.findItemsBetweenPrices();
+	}
+
+	static void startSaleTester() {
+
+		SaleTester saletester = new SaleTester();
+		saletester.findAll();
 	}
 
 }

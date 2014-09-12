@@ -6,10 +6,11 @@ import java.util.List;
 import javax.persistence.TypedQuery;
 
 import com.johnkuper.daointerface.StoreDAO;
+import com.johnkuper.domain.StoreDomain;
 import com.johnkuper.entity.Store;
 
-public class StoreDAOImpl extends GenericDAOImpl<Store, Integer> implements
-		StoreDAO {
+public class StoreDAOImpl extends GenericDAOImpl<Store, StoreDomain, Integer>
+		implements StoreDAO {
 
 	@Override
 	public List<Store> findItemsBetweenPrices(BigDecimal minprice,

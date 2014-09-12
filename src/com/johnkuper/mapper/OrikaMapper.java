@@ -62,7 +62,8 @@ public class OrikaMapper {
 	private void registerFields(MapperFactory factory) {
 		logger.debug("--- Start fields registration ---");
 
-		factory.classMap(Car.class, CarDomain.class).field("name", "car_mark")
+		factory.classMap(Car.class, CarDomain.class)
+				.field("name", "car_mark")
 				.field("model", "car_model")
 				.field("modification", "motorpower")
 				.field("color", "car_color").byDefault().register();
@@ -89,11 +90,11 @@ public class OrikaMapper {
 		logger.debug("--- Fields registration complete ---");
 	}
 
-	public <E, D> D mapEntityToDomain(E entity, Class<D> domainclass) {
-		return orikaFacade.map(entity, domainclass);
+	public <S, D> D map(S source, Class<D> destinationType) {
+		return orikaFacade.map(source, destinationType);
 	}
 
-	public <D, E> void mapDomainToEntity(D domain, Class<E> entityclass) {
-		orikaFacade.map(domain, entityclass);
+	public <S, D> void map(S source, D destination) {
+		orikaFacade.map(source, destination);
 	}
 }

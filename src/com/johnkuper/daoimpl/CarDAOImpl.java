@@ -5,9 +5,10 @@ import java.util.List;
 import javax.persistence.TypedQuery;
 
 import com.johnkuper.daointerface.CarDAO;
+import com.johnkuper.domain.CarDomain;
 import com.johnkuper.entity.Car;
 
-public class CarDAOImpl extends GenericDAOImpl<Car, Integer> implements CarDAO {
+public class CarDAOImpl extends GenericDAOImpl<Car,CarDomain,Integer> implements CarDAO {
 
 	@Override
 	public List<Car> findByName(String name) {

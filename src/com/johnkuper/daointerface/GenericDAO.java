@@ -2,16 +2,16 @@ package com.johnkuper.daointerface;
 
 import java.util.List;
 
-public interface GenericDAO<Model, IdType> {
+public interface GenericDAO<Entity, Domain, IdType> {
 
-	void create(Model entity);
+	void create(Domain domain);
 
-	Model update(Model entity);
+	void update(Domain domain);
 
-	List<Model> findAll();
+	List<Domain> findAll();
 
-	Model findOne(IdType id);
+	Domain findOne(IdType id);
 
-	Model delete(IdType id);
+	void delete(IdType id);
 
 }

@@ -112,3 +112,155 @@
 2014-09-12 16:21:25,246 DEBUG [main] JohnKuper [EntityToDomainMapper.java:36] Source data:  Car: {id = 2; name = BMW; model = X3; modification = 250hs; color = Белый} , Domain data: CarDomain: {id = 2; car_mark = BMW; car_model = X3; motorpower = 250hs; car_color = Белый}
 2014-09-12 16:21:25,251 DEBUG [main] JohnKuper [EntityToDomainMapper.java:39] New entity data  Car: {id = 2; name = Suzuki; model = X3; modification = 250hs; color = Белый} 
 2014-09-12 16:21:25,252 DEBUG [main] JohnKuper [GenericDAOImpl.java:51] --- Start 'update' method for Car entity ---
+2014-09-12 21:14:27,573 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 21:14:27,666 DEBUG [main] JohnKuper [OrikaMapper.java:89] --- Fields registration complete ---
+2014-09-12 21:14:50,369 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 21:14:50,470 DEBUG [main] JohnKuper [OrikaMapper.java:89] --- Fields registration complete ---
+2014-09-12 21:14:51,437 DEBUG [main] JohnKuper [StoreTester.java:23] Found items between price:  Store: {id = 3; car =  Car: {id = 3; name = Lada; model = Priora; modification = 90hs; color = Черный} ; count = 5; price = 400000.00; testdrive_avaible = true} 
+2014-09-12 21:14:51,442 DEBUG [main] JohnKuper [StoreTester.java:23] Found items between price:  Store: {id = 4; car =  Car: {id = 3; name = Lada; model = Priora; modification = 90hs; color = Черный} ; count = 2; price = 900000.00; testdrive_avaible = false} 
+2014-09-12 21:14:51,446 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 21:14:51,475 DEBUG [main] JohnKuper [OrikaMapper.java:89] --- Fields registration complete ---
+2014-09-12 21:15:06,846 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 21:15:06,972 DEBUG [main] JohnKuper [OrikaMapper.java:89] --- Fields registration complete ---
+2014-09-12 21:15:07,357 DEBUG [main] JohnKuper [GenericDAOImpl.java:76] --- Start 'findAll' method for Car entity ---
+2014-09-12 21:15:07,588 DEBUG [main] JohnKuper [CarTester.java:38] Found:  Car: {id = 1; name = Audi; model = R5; modification = 400hs; color = Красный} 
+2014-09-12 21:15:07,588 DEBUG [main] JohnKuper [CarTester.java:38] Found:  Car: {id = 2; name = BMW; model = X3; modification = 250hs; color = Белый} 
+2014-09-12 21:15:07,589 DEBUG [main] JohnKuper [CarTester.java:38] Found:  Car: {id = 3; name = Lada; model = Priora; modification = 90hs; color = Черный} 
+2014-09-12 21:15:07,589 DEBUG [main] JohnKuper [GenericDAOImpl.java:85] --- Start 'findOne' method for Car entity ---
+2014-09-12 21:15:07,596 DEBUG [main] JohnKuper [CarTester.java:45] Found one car : null
+2014-09-12 21:15:07,618 DEBUG [main] JohnKuper [CarTester.java:58] Found by name:  Car: {id = 1; name = Audi; model = R5; modification = 400hs; color = Красный} 
+2014-09-12 21:15:07,620 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 21:15:07,625 DEBUG [main] JohnKuper [OrikaMapper.java:89] --- Fields registration complete ---
+2014-09-12 21:16:49,791 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 21:16:49,853 DEBUG [main] JohnKuper [OrikaMapper.java:89] --- Fields registration complete ---
+2014-09-12 21:16:50,184 DEBUG [main] JohnKuper [GenericDAOImpl.java:54] --- Start 'create' method for Car entity ---
+2014-09-12 21:16:50,186 DEBUG [main] JohnKuper [GenericDAOImpl.java:55] Domain for create: CarDomain: {id = 4; car_mark = Chevrolet; car_model = Corvette; motorpower = 560hs; car_color = Red}
+2014-09-12 21:16:50,220 DEBUG [main] JohnKuper [GenericDAOImpl.java:57] New  Car: {id = 4; name = Chevrolet; model = Corvette; modification = 560hs; color = Red}  entity: 
+2014-09-12 21:21:17,859 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 21:21:17,944 DEBUG [main] JohnKuper [OrikaMapper.java:89] --- Fields registration complete ---
+2014-09-12 21:21:18,306 DEBUG [main] JohnKuper [GenericDAOImpl.java:55] --- Start 'create' method for Car entity ---
+2014-09-12 21:21:18,309 DEBUG [main] JohnKuper [GenericDAOImpl.java:56] Domain for create: CarDomain: {id = 4; car_mark = Chevrolet; car_model = Corvette; motorpower = 560hs; car_color = Red}
+2014-09-12 21:21:18,335 DEBUG [main] JohnKuper [GenericDAOImpl.java:58] New  Car: {id = 4; name = Chevrolet; model = Corvette; modification = 560hs; color = Red}  entity: 
+2014-09-12 21:25:15,576 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 21:25:15,682 DEBUG [main] JohnKuper [OrikaMapper.java:89] --- Fields registration complete ---
+2014-09-12 21:25:16,034 DEBUG [main] JohnKuper [GenericDAOImpl.java:55] --- Start 'create' method for Car entity ---
+2014-09-12 21:25:16,037 DEBUG [main] JohnKuper [GenericDAOImpl.java:56] Domain for create: CarDomain: {id = 0; car_mark = Chevrolet; car_model = Corvette; motorpower = 560hs; car_color = Red}
+2014-09-12 21:25:16,075 DEBUG [main] JohnKuper [GenericDAOImpl.java:58] New  Car: {id = 0; name = Chevrolet; model = Corvette; modification = 560hs; color = Red}  entity: 
+2014-09-12 21:25:16,213 DEBUG [main] JohnKuper [CarTester.java:23] Test car create: CarDomain: {id = 0; car_mark = Chevrolet; car_model = Corvette; motorpower = 560hs; car_color = Red}
+2014-09-12 21:25:16,213 DEBUG [main] JohnKuper [GenericDAOImpl.java:78] --- Start 'findAll' method for Car entity ---
+2014-09-12 21:25:16,424 DEBUG [main] JohnKuper [CarTester.java:38] Found:  Car: {id = 1; name = Audi; model = R5; modification = 400hs; color = Красный} 
+2014-09-12 21:25:16,425 DEBUG [main] JohnKuper [CarTester.java:38] Found:  Car: {id = 2; name = BMW; model = X3; modification = 250hs; color = Белый} 
+2014-09-12 21:25:16,425 DEBUG [main] JohnKuper [CarTester.java:38] Found:  Car: {id = 3; name = Lada; model = Priora; modification = 90hs; color = Черный} 
+2014-09-12 21:25:16,425 DEBUG [main] JohnKuper [CarTester.java:38] Found:  Car: {id = 4; name = Chevrolet; model = Corvette; modification = 560hs; color = Red} 
+2014-09-12 21:25:16,425 DEBUG [main] JohnKuper [GenericDAOImpl.java:87] --- Start 'findOne' method for Car entity ---
+2014-09-12 21:25:16,436 DEBUG [main] JohnKuper [CarTester.java:45] Found one car : null
+2014-09-12 21:25:16,461 DEBUG [main] JohnKuper [CarTester.java:58] Found by name:  Car: {id = 1; name = Audi; model = R5; modification = 400hs; color = Красный} 
+2014-09-12 21:25:48,012 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 21:25:48,129 DEBUG [main] JohnKuper [OrikaMapper.java:89] --- Fields registration complete ---
+2014-09-12 21:25:48,497 DEBUG [main] JohnKuper [GenericDAOImpl.java:55] --- Start 'create' method for Car entity ---
+2014-09-12 21:25:48,499 DEBUG [main] JohnKuper [GenericDAOImpl.java:56] Domain for create: CarDomain: {id = 0; car_mark = Chevrolet; car_model = Corvette; motorpower = 560hs; car_color = Red}
+2014-09-12 21:25:48,532 DEBUG [main] JohnKuper [GenericDAOImpl.java:58] New  Car: {id = 0; name = Chevrolet; model = Corvette; modification = 560hs; color = Red}  entity: 
+2014-09-12 22:17:57,838 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 22:17:57,914 DEBUG [main] JohnKuper [OrikaMapper.java:89] --- Fields registration complete ---
+2014-09-12 22:17:58,201 DEBUG [main] JohnKuper [GenericDAOImpl.java:86] --- Start 'findOne' method for Car entity ---
+2014-09-12 22:17:58,255 DEBUG [main] JohnKuper [GenericDAOImpl.java:89] Found entity:  Car: {id = 2; name = BMW; model = X3; modification = 250hs; color = Белый} 
+2014-09-12 22:17:58,279 DEBUG [main] JohnKuper [CarTester.java:44] Found one car : CarDomain: {id = 2; car_mark = BMW; car_model = X3; motorpower = 250hs; car_color = Белый}
+2014-09-12 22:22:03,966 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 22:22:04,035 DEBUG [main] JohnKuper [OrikaMapper.java:89] --- Fields registration complete ---
+2014-09-12 22:22:04,384 DEBUG [main] JohnKuper [GenericDAOImpl.java:86] --- Start 'findOne' method for Car entity ---
+2014-09-12 22:22:04,447 DEBUG [main] JohnKuper [GenericDAOImpl.java:89] Found entity:  Car: {id = 2; name = BMW; model = X3; modification = 250hs; color = Белый} 
+2014-09-12 22:22:04,479 DEBUG [main] JohnKuper [GenericDAOImpl.java:66] --- Start 'update' method for Car entity ---
+2014-09-12 22:22:04,499 DEBUG [main] JohnKuper [CarTester.java:30] Update: CarDomain: {id = 2; car_mark = Honda; car_model = X3; motorpower = 250hs; car_color = Белый}
+2014-09-12 22:26:24,038 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 22:26:24,123 DEBUG [main] JohnKuper [OrikaMapper.java:89] --- Fields registration complete ---
+2014-09-12 22:26:24,404 DEBUG [main] JohnKuper [GenericDAOImpl.java:87] --- Start 'findOne' method for Car entity ---
+2014-09-12 22:26:24,458 DEBUG [main] JohnKuper [GenericDAOImpl.java:90] Found entity:  Car: {id = 2; name = BMW; model = X3; modification = 250hs; color = Белый} 
+2014-09-12 22:26:24,486 DEBUG [main] JohnKuper [GenericDAOImpl.java:66] --- Start 'update' method for Car entity ---
+2014-09-12 22:26:24,489 DEBUG [main] JohnKuper [GenericDAOImpl.java:70] New entity is:  Car: {id = 2; name = BMW; model = X3; modification = 250hs; color = Белый} 
+2014-09-12 22:26:24,501 DEBUG [main] JohnKuper [CarTester.java:30] Update: CarDomain: {id = 2; car_mark = Honda; car_model = X3; motorpower = 250hs; car_color = Белый}
+2014-09-12 22:28:46,112 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 22:28:46,257 DEBUG [main] JohnKuper [OrikaMapper.java:89] --- Fields registration complete ---
+2014-09-12 22:28:46,654 DEBUG [main] JohnKuper [GenericDAOImpl.java:90] --- Start 'findOne' method for Car entity ---
+2014-09-12 22:28:46,716 DEBUG [main] JohnKuper [GenericDAOImpl.java:93] Found entity:  Car: {id = 2; name = BMW; model = X3; modification = 250hs; color = Белый} 
+2014-09-12 22:28:46,750 DEBUG [main] JohnKuper [GenericDAOImpl.java:66] --- Start 'update' method for Car entity ---
+2014-09-12 22:28:46,763 DEBUG [main] JohnKuper [GenericDAOImpl.java:74] New entity is:  Car: {id = 2; name = BMW; model = X3; modification = 250hs; color = Белый} 
+2014-09-12 22:28:46,772 DEBUG [main] JohnKuper [CarTester.java:30] Update: CarDomain: {id = 2; car_mark = Honda; car_model = X3; motorpower = 250hs; car_color = Белый}
+2014-09-12 22:29:58,333 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 22:29:58,415 DEBUG [main] JohnKuper [OrikaMapper.java:89] --- Fields registration complete ---
+2014-09-12 22:29:58,780 DEBUG [main] JohnKuper [GenericDAOImpl.java:91] --- Start 'findOne' method for Car entity ---
+2014-09-12 22:29:58,839 DEBUG [main] JohnKuper [GenericDAOImpl.java:94] Found entity:  Car: {id = 2; name = BMW; model = X3; modification = 250hs; color = Белый} 
+2014-09-12 22:29:58,876 DEBUG [main] JohnKuper [GenericDAOImpl.java:66] --- Start 'update' method for Car entity ---
+2014-09-12 22:29:58,876 DEBUG [main] JohnKuper [GenericDAOImpl.java:68] Domain for update CarDomain: {id = 2; car_mark = Honda; car_model = X3; motorpower = 250hs; car_color = Белый}
+2014-09-12 22:29:58,889 DEBUG [main] JohnKuper [GenericDAOImpl.java:75] New entity is:  Car: {id = 2; name = BMW; model = X3; modification = 250hs; color = Белый} 
+2014-09-12 22:36:41,701 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 22:36:41,816 DEBUG [main] JohnKuper [OrikaMapper.java:90] --- Fields registration complete ---
+2014-09-12 22:36:42,172 DEBUG [main] JohnKuper [GenericDAOImpl.java:91] --- Start 'findOne' method for Car entity ---
+2014-09-12 22:36:42,251 DEBUG [main] JohnKuper [GenericDAOImpl.java:94] Found entity:  Car: {id = 2; name = BMW; model = X3; modification = 250hs; color = Белый} 
+2014-09-12 22:36:52,557 DEBUG [main] JohnKuper [GenericDAOImpl.java:66] --- Start 'update' method for Car entity ---
+2014-09-12 22:36:54,518 DEBUG [main] JohnKuper [GenericDAOImpl.java:68] Domain for update CarDomain: {id = 2; car_mark = Honda; car_model = X3; motorpower = 250hs; car_color = Белый}
+2014-09-12 22:37:25,502 DEBUG [main] JohnKuper [GenericDAOImpl.java:75] New entity is:  Car: {id = 2; name = BMW; model = X3; modification = 250hs; color = Белый} 
+2014-09-12 22:41:59,036 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 22:41:59,196 DEBUG [main] JohnKuper [OrikaMapper.java:90] --- Fields registration complete ---
+2014-09-12 22:41:59,628 DEBUG [main] JohnKuper [GenericDAOImpl.java:88] --- Start 'findOne' method for Car entity ---
+2014-09-12 22:41:59,688 DEBUG [main] JohnKuper [GenericDAOImpl.java:91] Found entity:  Car: {id = 2; name = BMW; model = X3; modification = 250hs; color = Белый} 
+2014-09-12 22:41:59,726 DEBUG [main] JohnKuper [GenericDAOImpl.java:66] --- Start 'update' method for Car entity ---
+2014-09-12 22:41:59,726 DEBUG [main] JohnKuper [GenericDAOImpl.java:68] Domain for update CarDomain: {id = 2; car_mark = Honda; car_model = X3; motorpower = 250hs; car_color = Белый}
+2014-09-12 22:41:59,741 DEBUG [main] JohnKuper [GenericDAOImpl.java:72] New entity is:  Car: {id = 2; name = null; model = X3; modification = 250hs; color = Белый} 
+2014-09-12 22:42:27,899 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 22:42:27,999 DEBUG [main] JohnKuper [OrikaMapper.java:90] --- Fields registration complete ---
+2014-09-12 22:42:28,367 DEBUG [main] JohnKuper [GenericDAOImpl.java:88] --- Start 'findOne' method for Car entity ---
+2014-09-12 22:42:28,445 DEBUG [main] JohnKuper [GenericDAOImpl.java:91] Found entity:  Car: {id = 2; name = BMW; model = X3; modification = 250hs; color = Белый} 
+2014-09-12 22:42:28,471 DEBUG [main] JohnKuper [GenericDAOImpl.java:66] --- Start 'update' method for Car entity ---
+2014-09-12 22:42:40,809 DEBUG [main] JohnKuper [GenericDAOImpl.java:68] Domain for update CarDomain: {id = 2; car_mark = Honda; car_model = X3; motorpower = 250hs; car_color = Белый}
+2014-09-12 22:46:23,072 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 22:46:23,157 DEBUG [main] JohnKuper [OrikaMapper.java:90] --- Fields registration complete ---
+2014-09-12 22:46:23,475 DEBUG [main] JohnKuper [GenericDAOImpl.java:88] --- Start 'findOne' method for Car entity ---
+2014-09-12 22:46:23,543 DEBUG [main] JohnKuper [GenericDAOImpl.java:91] Found entity:  Car: {id = 2; name = BMW; model = X3; modification = 250hs; color = Белый} 
+2014-09-12 22:46:23,568 DEBUG [main] JohnKuper [GenericDAOImpl.java:66] --- Start 'update' method for Car entity ---
+2014-09-12 22:46:23,568 DEBUG [main] JohnKuper [GenericDAOImpl.java:68] Domain for update CarDomain: {id = 2; car_mark = Honda; car_model = X3; motorpower = 250hs; car_color = Белый}
+2014-09-12 22:46:23,583 DEBUG [main] JohnKuper [GenericDAOImpl.java:72] New entity is:  Car: {id = 2; name = Honda; model = X3; modification = 250hs; color = Белый} 
+2014-09-12 23:03:25,848 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 23:03:25,921 DEBUG [main] JohnKuper [OrikaMapper.java:90] --- Fields registration complete ---
+2014-09-12 23:03:26,280 DEBUG [main] JohnKuper [GenericDAOImpl.java:80] --- Start 'findAll' method for Car entity ---
+2014-09-12 23:03:26,652 DEBUG [main] JohnKuper [CarTester.java:37] Found: CarDomain: {id = 0; car_mark = Audi; car_model = R5; motorpower = 400hs; car_color = Красный}
+2014-09-12 23:03:26,653 DEBUG [main] JohnKuper [CarTester.java:37] Found: CarDomain: {id = 0; car_mark = Honda; car_model = X3; motorpower = 250hs; car_color = Белый}
+2014-09-12 23:03:26,653 DEBUG [main] JohnKuper [CarTester.java:37] Found: CarDomain: {id = 0; car_mark = Lada; car_model = Priora; motorpower = 90hs; car_color = Черный}
+2014-09-12 23:03:26,654 DEBUG [main] JohnKuper [CarTester.java:37] Found: CarDomain: {id = 0; car_mark = Chevrolet; car_model = Corvette; motorpower = 560hs; car_color = Red}
+2014-09-12 23:04:14,602 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 23:04:14,708 DEBUG [main] JohnKuper [OrikaMapper.java:90] --- Fields registration complete ---
+2014-09-12 23:04:15,191 DEBUG [main] JohnKuper [GenericDAOImpl.java:80] --- Start 'findAll' method for Car entity ---
+2014-09-12 23:04:15,430 DEBUG [main] JohnKuper [CarTester.java:37] Found: CarDomain: {id = 1; car_mark = Audi; car_model = R5; motorpower = 400hs; car_color = Красный}
+2014-09-12 23:04:15,431 DEBUG [main] JohnKuper [CarTester.java:37] Found: CarDomain: {id = 2; car_mark = Honda; car_model = X3; motorpower = 250hs; car_color = Белый}
+2014-09-12 23:04:15,432 DEBUG [main] JohnKuper [CarTester.java:37] Found: CarDomain: {id = 3; car_mark = Lada; car_model = Priora; motorpower = 90hs; car_color = Черный}
+2014-09-12 23:04:15,433 DEBUG [main] JohnKuper [CarTester.java:37] Found: CarDomain: {id = 4; car_mark = Chevrolet; car_model = Corvette; motorpower = 560hs; car_color = Red}
+2014-09-12 23:10:21,745 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 23:10:21,856 DEBUG [main] JohnKuper [OrikaMapper.java:90] --- Fields registration complete ---
+2014-09-12 23:10:22,201 DEBUG [main] JohnKuper [GenericDAOImpl.java:80] --- Start 'findAll' method for Store entity ---
+2014-09-12 23:10:22,479 DEBUG [main] JohnKuper [SaleTester.java:20] Found: StoreDomain: {id = 1; amount = 10; carPrice = 4000000.00; testDrive = true%n Car: {id = 1; name = Audi; model = R5; modification = 400hs; color = Красный} }%n
+2014-09-12 23:10:22,482 DEBUG [main] JohnKuper [SaleTester.java:20] Found: StoreDomain: {id = 2; amount = 5; carPrice = 2500000.00; testDrive = true%n Car: {id = 2; name = Honda; model = X3; modification = 250hs; color = Белый} }%n
+2014-09-12 23:10:22,482 DEBUG [main] JohnKuper [SaleTester.java:20] Found: StoreDomain: {id = 3; amount = 5; carPrice = 400000.00; testDrive = true%n Car: {id = 3; name = Lada; model = Priora; modification = 90hs; color = Черный} }%n
+2014-09-12 23:10:22,483 DEBUG [main] JohnKuper [SaleTester.java:20] Found: StoreDomain: {id = 4; amount = 2; carPrice = 900000.00; testDrive = false%n Car: {id = 3; name = Lada; model = Priora; modification = 90hs; color = Черный} }%n
+2014-09-12 23:12:56,840 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 23:12:57,017 DEBUG [main] JohnKuper [OrikaMapper.java:90] --- Fields registration complete ---
+2014-09-12 23:12:57,630 DEBUG [main] JohnKuper [GenericDAOImpl.java:80] --- Start 'findAll' method for Sale entity ---
+2014-09-12 23:12:58,071 DEBUG [main] JohnKuper [SaleTester.java:20] Found: SaleDomain: {id = 1; salePrice = 5000000.99; dateOfSale = 2014-09-12 20:29:28.0%n Car: {id = 1; name = Audi; model = R5; modification = 400hs; color = Красный} %n Customer: {id = 1; name = Игорь; surname = Ежов; patronic = Владимирович; passport_series = 5705; passport_number = 032667; birthdate = 1970-04-16} %n Merchant: {id = 1; name = Михаил; surname = Захаров; patronic = Олегович} }%n
+2014-09-12 23:12:58,072 DEBUG [main] JohnKuper [SaleTester.java:20] Found: SaleDomain: {id = 2; salePrice = 4550000.25; dateOfSale = 2014-09-12 20:29:28.0%n Car: {id = 2; name = Honda; model = X3; modification = 250hs; color = Белый} %n Customer: {id = 2; name = Олег; surname = Шашков; patronic = Михайлович; passport_series = 5522; passport_number = 035878; birthdate = 1975-07-25} %n Merchant: {id = 2; name = Алексей; surname = Иванов; patronic = Петрович} }%n
+2014-09-12 23:12:58,073 DEBUG [main] JohnKuper [SaleTester.java:20] Found: SaleDomain: {id = 3; salePrice = 150000.55; dateOfSale = 2014-09-12 20:29:28.0%n Car: {id = 3; name = Lada; model = Priora; modification = 90hs; color = Черный} %n Customer: {id = 1; name = Игорь; surname = Ежов; patronic = Владимирович; passport_series = 5705; passport_number = 032667; birthdate = 1970-04-16} %n Merchant: {id = 1; name = Михаил; surname = Захаров; patronic = Олегович} }%n
+2014-09-12 23:14:57,592 DEBUG [main] JohnKuper [OrikaMapper.java:63] --- Start fields registration ---
+2014-09-12 23:14:57,664 DEBUG [main] JohnKuper [OrikaMapper.java:90] --- Fields registration complete ---
+2014-09-12 23:14:57,934 DEBUG [main] JohnKuper [GenericDAOImpl.java:80] --- Start 'findAll' method for Sale entity ---
+2014-09-12 23:14:58,331 DEBUG [main] JohnKuper [SaleTester.java:20] Found: SaleDomain: {id = 1; salePrice = 5000000.99; dateOfSale = 2014-09-12 20:29:28.0
+ Car: {id = 1; name = Audi; model = R5; modification = 400hs; color = Красный} 
+ Customer: {id = 1; name = Игорь; surname = Ежов; patronic = Владимирович; passport_series = 5705; passport_number = 032667; birthdate = 1970-04-16} 
+ Merchant: {id = 1; name = Михаил; surname = Захаров; patronic = Олегович} }
+
+2014-09-12 23:14:58,336 DEBUG [main] JohnKuper [SaleTester.java:20] Found: SaleDomain: {id = 2; salePrice = 4550000.25; dateOfSale = 2014-09-12 20:29:28.0
+ Car: {id = 2; name = Honda; model = X3; modification = 250hs; color = Белый} 
+ Customer: {id = 2; name = Олег; surname = Шашков; patronic = Михайлович; passport_series = 5522; passport_number = 035878; birthdate = 1975-07-25} 
+ Merchant: {id = 2; name = Алексей; surname = Иванов; patronic = Петрович} }
+
+2014-09-12 23:14:58,337 DEBUG [main] JohnKuper [SaleTester.java:20] Found: SaleDomain: {id = 3; salePrice = 150000.55; dateOfSale = 2014-09-12 20:29:28.0
+ Car: {id = 3; name = Lada; model = Priora; modification = 90hs; color = Черный} 
+ Customer: {id = 1; name = Игорь; surname = Ежов; patronic = Владимирович; passport_series = 5705; passport_number = 032667; birthdate = 1970-04-16} 
+ Merchant: {id = 1; name = Михаил; surname = Захаров; patronic = Олегович} }
+
