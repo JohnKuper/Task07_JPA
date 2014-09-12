@@ -23,21 +23,21 @@ public class Merchant {
 	private String surname;
 
 	@Column(length = 100)
-	private String patronic;
+	private String patronymic;
 
 	public Merchant() {
 	}
 
-	public Merchant(String name, String surname, String patronic) {
+	public Merchant(String name, String surname, String patronymic) {
 		this.name = name;
 		this.surname = surname;
-		this.patronic = patronic;
+		this.patronymic = patronymic;
 	}
 
 	@Override
 	public String toString() {
 		return " Merchant: {id = " + id + "; name = " + name + "; surname = "
-				+ surname + "; patronic = " + patronic + "} ";
+				+ surname + "; patronic = " + patronymic + "} ";
 	}
 
 	public int getId() {
@@ -64,12 +64,14 @@ public class Merchant {
 		this.surname = surname;
 	}
 
-	public String getPatronic() {
-		return patronic;
+	public String getPatronymic() {
+		return patronymic;
 	}
 
-	public void setPatronic(String patronic) {
-		this.patronic = patronic;
+	public void setPatronymic(String patronymic) {
+		this.patronymic = patronymic;
 	}
+
+	
 
 }

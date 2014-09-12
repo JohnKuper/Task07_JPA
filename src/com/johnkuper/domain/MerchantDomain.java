@@ -2,49 +2,27 @@ package com.johnkuper.domain;
 
 public class MerchantDomain {
 
-	private int id; // id
-	private String merchName; // name
-	private String mercNurname; // surname
-	private String merchNatronic; // patronic
+	public int id; // id
+	public String merchName; // name
+	public String merchSurname; // surname
+	public String merchPatronymic; // patronymic
 
 	public MerchantDomain() {
 	}
 
-	public MerchantDomain(int id, String merchName, String mercNurname,
-			String merchNatronic) {
+	public MerchantDomain(int id, String merchName, String merchSurname,
+			String merchPatronymic) {
 		this.id = id;
 		this.merchName = merchName;
-		this.mercNurname = mercNurname;
-		this.merchNatronic = merchNatronic;
+		this.merchSurname = merchSurname;
+		this.merchPatronymic = merchPatronymic;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-
-	public String getMerchName() {
-		return merchName;
-	}
-
-	public void setMerchName(String merchName) {
-		this.merchName = merchName;
-	}
-
-	public String getMercNurname() {
-		return mercNurname;
-	}
-
-	public void setMercNurname(String mercNurname) {
-		this.mercNurname = mercNurname;
-	}
-
-	public String getMerchNatronic() {
-		return merchNatronic;
-	}
-
-	public void setMerchNatronic(String merchNatronic) {
-		this.merchNatronic = merchNatronic;
+	@Override
+	public String toString() {
+		return "MerchantDomain: {id = " + id + "; merchName = " + merchName
+				+ "; merchSurname = " + merchSurname + "; merchPatronymic = "
+				+ merchPatronymic + "}";
 	}
 
 }

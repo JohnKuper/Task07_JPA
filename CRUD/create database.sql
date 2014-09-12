@@ -15,14 +15,14 @@ create table if not exists merchants(
 	id_merchant int(3) auto_increment primary key,
 	name varchar(100),
 	surname varchar(100),
-	patronic varchar(100)
+	patronymic varchar(100)
 );
 
 create table if not exists customers(
 	id_customer int(7) auto_increment primary key,
 	name varchar(100),
 	surname varchar(100),
-	patronic varchar(100),
+	patronymic varchar(100),
 	passport_series char(4),
 	passport_number char(6),
 	birthdate date,

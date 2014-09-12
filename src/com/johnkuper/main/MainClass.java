@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import com.johnkuper.domain.CarDomain;
 import com.johnkuper.entity.Car;
-import com.johnkuper.mapper.EntityToDomainMapper;
+import com.johnkuper.mapper.OrikaMapper;
 import com.johnkuper.tester.CarTester;
 import com.johnkuper.tester.StoreTester;
 
@@ -17,8 +17,8 @@ public class MainClass {
 
 		// startCarTester();
 		// startStoreTester();
-		EntityToDomainMapper mapper = new EntityToDomainMapper();
-		mapper.runMapper(Car.class, CarDomain.class);
+		OrikaMapper mapper = new OrikaMapper();
+		//mapper.runMapper(Car.class, CarDomain.class);
 
 		/*
 		 * List<Car> cars = carimpl.findAll(); for (Car car : cars) {

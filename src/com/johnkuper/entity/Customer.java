@@ -27,7 +27,7 @@ public class Customer {
 	private String surname;
 
 	@Column(length = 100)
-	private String patronic;
+	private String patronymic;
 
 	@Column(length = 4)
 	private String passport_series;
@@ -45,7 +45,7 @@ public class Customer {
 			String passport_series, String passport_number, Date birthdate) {
 		this.name = name;
 		this.surname = surname;
-		this.patronic = patronic;
+		this.patronymic = patronic;
 		this.passport_series = passport_series;
 		this.passport_number = passport_number;
 		this.birthdate = birthdate;
@@ -54,9 +54,10 @@ public class Customer {
 	@Override
 	public String toString() {
 		return " Customer: {id = " + id + "; name = " + name + "; surname = "
-				+ surname + "; patronic = " + patronic + "; passport_series = "
-				+ passport_series + "; passport_number = " + passport_number
-				+ "; birthdate = " + birthdate + "} ";
+				+ surname + "; patronic = " + patronymic
+				+ "; passport_series = " + passport_series
+				+ "; passport_number = " + passport_number + "; birthdate = "
+				+ birthdate + "} ";
 	}
 
 	public int getId() {
@@ -83,12 +84,12 @@ public class Customer {
 		this.surname = surname;
 	}
 
-	public String getPatronic() {
-		return patronic;
+	public String getPatronymic() {
+		return patronymic;
 	}
 
-	public void setPatronic(String patronic) {
-		this.patronic = patronic;
+	public void setPatronymic(String patronymic) {
+		this.patronymic = patronymic;
 	}
 
 	public String getPassport_series() {
