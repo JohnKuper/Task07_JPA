@@ -54,7 +54,7 @@ public class Customer {
 	@Override
 	public String toString() {
 		return " Customer: {id = " + id + "; name = " + name + "; surname = "
-				+ surname + "; patronic = " + patronymic
+				+ surname + "; patronymic = " + patronymic
 				+ "; passport_series = " + passport_series
 				+ "; passport_number = " + passport_number + "; birthdate = "
 				+ birthdate + "} ";

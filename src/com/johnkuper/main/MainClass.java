@@ -13,8 +13,8 @@ public class MainClass {
 
 	public static void main(String[] args) {
 
-		// startCarTester();
-		startSaleTester();
+		 startCarTester();
+		//startSaleTester();
 		// startStoreTester();
 		// OrikaMapper mapper = new OrikaMapper();
 		// mapper.runMapper(Car.class, CarDomain.class);
@@ -36,12 +36,12 @@ public class MainClass {
 	static void startCarTester() {
 
 		CarTester cartester = new CarTester();
-		// cartester.create("Chevrolet", "Corvette", "560hs", "Red");
-		// cartester.update(2, "Honda");
+		cartester.create("Chevrolet", "Corvette", "560hs", "Red");
+		cartester.update(2, "Honda");
+		cartester.findOne(4);
+		cartester.findByName("Honda");
+		cartester.delete(1);
 		cartester.findAll();
-		// cartester.findOne(2);
-		// cartester.findByName("Audi");
-		// cartester.delete(1);
 	}
 
 	static void startStoreTester() {

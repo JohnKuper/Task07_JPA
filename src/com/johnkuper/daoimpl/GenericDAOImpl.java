@@ -55,10 +55,10 @@ public class GenericDAOImpl<Entity, Domain extends DomainObject, IdType>
 		logger.debug("--- Start 'create' method for {} entity ---", entityName);
 		logger.debug("Domain for create: {}", domain);
 		Entity entity = mapper.map(domain, entityType);
-		logger.debug("New {} entity: ", entity);
 		entityManager.getTransaction().begin();
 		entityManager.persist(entity);
 		entityManager.getTransaction().commit();
+		logger.debug("New {} entity: ", entity);
 
 	}
 
@@ -70,8 +70,8 @@ public class GenericDAOImpl<Entity, Domain extends DomainObject, IdType>
 		entityManager.getTransaction().begin();
 		Entity entity = mapper.map(domain, entityType);
 		entityManager.merge(entity);
-		logger.debug("New entity is: {}", entity);
 		entityManager.getTransaction().commit();
+		logger.debug("New entity is: {}", entity);
 	}
 
 	@Override
@@ -86,6 +86,7 @@ public class GenericDAOImpl<Entity, Domain extends DomainObject, IdType>
 		if (entities.size() != 0) {
 			for (Entity entity : entities) {
 				domains.add(mapper.map(entity, domainType));
+				logger.debug("Found: {}", entity);
 			}
 		}
 		return domains;
@@ -96,8 +97,8 @@ public class GenericDAOImpl<Entity, Domain extends DomainObject, IdType>
 		logger.debug("--- Start 'findOne' method for {} entity ---",
 				entityType.getSimpleName());
 		Entity entity = entityManager.find(entityType, id);
-		logger.debug("Found entity: {}", entity);
 		Domain domain = mapper.map(entity, domainType);
+		logger.debug("Found entity: {}", entity);
 		return domain;
 	}
 

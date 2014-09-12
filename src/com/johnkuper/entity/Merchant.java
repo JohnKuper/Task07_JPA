@@ -37,7 +37,7 @@ public class Merchant {
 	@Override
 	public String toString() {
 		return " Merchant: {id = " + id + "; name = " + name + "; surname = "
-				+ surname + "; patronic = " + patronymic + "} ";
+				+ surname + "; patronymic = " + patronymic + "} ";
 	}
 
 	public int getId() {

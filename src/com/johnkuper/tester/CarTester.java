@@ -32,10 +32,8 @@ public class CarTester {
 
 	public void findAll() {
 
-		List<CarDomain> cardomains = carimpl.findAll();
-		for (CarDomain cardomain : cardomains) {
-			logger.debug("Found: {}", cardomain);
-		}
+		carimpl.findAll();
+
 	}
 
 	public void findOne(int id) {
@@ -46,7 +44,7 @@ public class CarTester {
 
 	public void delete(int id) {
 
-		carimpl.delete(1);
+		carimpl.delete(id);
 	}
 
 	public void findByName(String name) {
