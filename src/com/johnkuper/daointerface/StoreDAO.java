@@ -8,6 +8,6 @@ import com.johnkuper.entity.Store;
 
 public interface StoreDAO extends GenericDAO<Store,StoreDomain,Integer> {
 
-	List<Store> findItemsBetweenPrices(BigDecimal maxprice, BigDecimal minprice);
+	List<StoreDomain> findItemsBetweenPrices(BigDecimal maxprice, BigDecimal minprice);
 
 }

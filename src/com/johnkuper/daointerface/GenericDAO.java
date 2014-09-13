@@ -10,6 +10,8 @@ public interface GenericDAO<Entity, Domain, IdType> {
 
 	List<Domain> findAll();
 
+	List<Domain> findAll(IdType limit);
+
 	Domain findOne(IdType id);
 
 	void delete(IdType id);

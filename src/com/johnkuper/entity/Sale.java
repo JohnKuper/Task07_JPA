@@ -45,8 +45,7 @@ public class Sale {
 	public Sale() {
 	}
 
-	public Sale(Car car, Customer customer, Merchant merchant,
-			BigDecimal price) {
+	public Sale(Car car, Customer customer, Merchant merchant, BigDecimal price) {
 		this.car = car;
 		this.customer = customer;
 		this.merchant = merchant;
@@ -55,8 +54,9 @@ public class Sale {
 
 	@Override
 	public String toString() {
-		return " Sale: {id = " + id + car + customer + merchant + "; price = "
-				+ price + "; saleDate = " + saleDate + "} ";
+		return String.format("%n Sale: id = " + id + "; price = " + price
+				+ "; sale_date = " + saleDate + "%n" + car + "%n" + customer
+				+ "%n" + merchant + "%n");
 	}
 
 	public int getId() {

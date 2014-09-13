@@ -61,3 +61,85 @@ create table if not exists store(
 );
 
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'root' WITH GRANT OPTION;
+
+insert into cars(name,model,modification,color)
+values('Audi','R5','400hs','Красный'),
+	  ('BMW','X3','250hs','Белый'),
+	  ('Lada','Priora','90hs','Черный'),
+	  ('Lada','Granta','150hs','Синий'),
+      ('Lamborghini','Diablo SV','900hs','Металлик');
+
+insert into customers(name,surname,patronymic,passport_series,passport_number,birthdate)
+values('Игорь','Ежов','Владимирович','5705','032667', cast('1970-04-16' as datetime)),
+	  ('Олег','Шашков','Михайлович','5522','035878', cast('1975-07-25' as datetime)),
+	  ('Никифор','Швечиков','Евлампиевич','5533','034378', cast('1985-04-22' as datetime)),
+	  ('Юлия','Сильвестрова','Михеевна','4422','235998', cast('1986-01-01' as datetime)),
+	  ('Яна','Осинова','Якововна','5589','712260', cast('1972-02-27' as datetime));
+
+insert into merchants(name,surname,patronymic)
+values('Михаил','Захаров','Олегович'),
+	  ('Алексей','Иванов','Петрович'),
+	  ('Семен','Воронцов','Дмитриевич');
+
+DELIMITER $$
+ DROP PROCEDURE IF EXISTS fillDataBaseSales$$
+ CREATE PROCEDURE fillDataBaseSales()
+	BEGIN
+		DECLARE step INT;
+		DECLARE carRnd INT;
+		DECLARE customerRnd INT;
+		DECLARE merchantRnd INT;
+		DECLARE priceRnd DECIMAL(11,2);
+
+		set step = 1;
+
+		WHILE step  <= 50 DO
+
+			set carRnd = ROUND(RAND()*4)+1;
+			set customerRnd = ROUND(RAND()*4)+1 ;
+			set merchantRnd = ROUND(RAND()*2)+1;
+			set priceRnd = ROUND(RAND()*1000000.50);
+
+
+			insert into sales(id_car,id_customer,id_merchant,price)
+			values(carRnd,customerRnd,merchantRnd,priceRnd);
+
+
+
+			set step = step + 1;
+		END WHILE;
+	END$$
+DELIMITER ;   
+
+DELIMITER $$
+ DROP PROCEDURE IF EXISTS fillDataBaseStore$$
+ CREATE PROCEDURE fillDataBaseStore()
+	BEGIN
+		DECLARE step INT;
+		DECLARE carRnd INT;
+		DECLARE countRnd INT;
+		DECLARE priceRnd DECIMAL(11,2);
+		DECLARE testDriveRnd Bit;
+
+		set step = 1;
+
+		WHILE step  <= 50 DO
+
+			set carRnd = ROUND(RAND()*4)+1;
+			set countRnd = ROUND(RAND()*9)+1 ;
+			set priceRnd = ROUND(RAND()*1000000.50);
+			set testDriveRnd = ROUND(RAND()*1);
+
+
+			insert into store(id_car,count,price,testdrive_avaible)
+			values(carRnd,countRnd,priceRnd,testDriveRnd);
+
+
+
+			set step = step + 1;
+		END WHILE;
+	END$$
+DELIMITER ;  
+
+call fillDataBaseSales(); 
+call fillDataBaseStore(); 

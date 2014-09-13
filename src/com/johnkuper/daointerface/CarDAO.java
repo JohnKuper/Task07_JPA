@@ -7,6 +7,6 @@ import com.johnkuper.entity.Car;
 
 public interface CarDAO extends GenericDAO<Car, CarDomain, Integer> {
 
-	List<Car> findByName(String name);
+	List<CarDomain> findByName(String name);
 
 }

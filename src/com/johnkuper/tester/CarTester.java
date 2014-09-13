@@ -1,13 +1,10 @@
 package com.johnkuper.tester;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.johnkuper.daoimpl.CarDAOImpl;
 import com.johnkuper.domain.CarDomain;
-import com.johnkuper.entity.Car;
 
 public class CarTester {
 
@@ -19,15 +16,14 @@ public class CarTester {
 
 		CarDomain cardomain = new CarDomain(name, model, modification, color);
 		carimpl.create(cardomain);
-		logger.debug("Test car create: {}", cardomain);
 	}
 
 	public void update(int id, String name) {
 
 		CarDomain cardomain = carimpl.findOne(id);
+		logger.debug("Domain for update: {}", cardomain);
 		cardomain.setCar_mark(name);
 		carimpl.update(cardomain);
-		// logger.debug("Update: {}", cardomain);
 	}
 
 	public void findAll() {
@@ -38,8 +34,7 @@ public class CarTester {
 
 	public void findOne(int id) {
 
-		CarDomain cardomain = carimpl.findOne(id);
-		logger.debug("Found one domain car: {}", cardomain);
+		carimpl.findOne(id);
 	}
 
 	public void delete(int id) {
@@ -49,10 +44,7 @@ public class CarTester {
 
 	public void findByName(String name) {
 
-		List<Car> cars = carimpl.findByName(name);
-		for (Car car : cars) {
-			logger.debug("Found by name: {}", car);
-		}
+		carimpl.findByName(name);
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.johnkuper.daoimpl;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.TypedQuery;
@@ -13,7 +14,7 @@ public class StoreDAOImpl extends GenericDAOImpl<Store, StoreDomain, Integer>
 		implements StoreDAO {
 
 	@Override
-	public List<Store> findItemsBetweenPrices(BigDecimal minprice,
+	public List<StoreDomain> findItemsBetweenPrices(BigDecimal minprice,
 			BigDecimal maxprice) {
 
 		TypedQuery<Store> query = entityManager
@@ -22,7 +23,17 @@ public class StoreDAOImpl extends GenericDAOImpl<Store, StoreDomain, Integer>
 						Store.class);
 		query.setParameter("minprice", minprice);
 		query.setParameter("maxprice", maxprice);
-		return query.getResultList();
+		List<Store> items = query.getResultList();
+		List<StoreDomain> domainitems = new ArrayList<StoreDomain>();
+		logger.debug("--- {} Items between {} and {} prices was found ---",
+				items.size(), minprice, maxprice);
+		if (items.size() > 0) {
+			for (Store item : items) {
+				domainitems.add(mapper.map(item, StoreDomain.class));
+				logger.debug("{}", item);
+			}
+		}
+		return domainitems;
 	}
 
 }

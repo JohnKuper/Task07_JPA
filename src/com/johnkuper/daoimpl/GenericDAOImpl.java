@@ -66,7 +66,6 @@ public class GenericDAOImpl<Entity, Domain extends DomainObject, IdType>
 	public void update(Domain domain) {
 		logger.debug("--- Start 'update' method for {} entity ---",
 				entityType.getSimpleName());
-		logger.debug("Domain for update {}", domain);
 		entityManager.getTransaction().begin();
 		Entity entity = mapper.map(domain, entityType);
 		entityManager.merge(entity);
@@ -107,11 +106,22 @@ public class GenericDAOImpl<Entity, Domain extends DomainObject, IdType>
 		logger.debug("--- Start 'delete' method for {} entity ---",
 				entityType.getSimpleName());
 		Domain domain = findOne(id);
-		Entity entity = entityManager.find(entityType, domain.getId());
-		logger.debug("Entity for delete: {}", entity);
-		entityManager.getTransaction().begin();
-		entityManager.remove(entity);
-		entityManager.getTransaction().commit();
+		if (domain != null) {
+			Entity entity = entityManager.find(entityType, domain.getId());
+			logger.debug("Entity for delete: {}", entity);
+			entityManager.getTransaction().begin();
+			entityManager.remove(entity);
+			entityManager.getTransaction().commit();
+		} else {
+			logger.error("Can't find entity with ID = {}", id);
+		}
+
+	}
+
+	@Override
+	public List<Domain> findAll(IdType limit) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
