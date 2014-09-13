@@ -16,6 +16,8 @@ public class StoreDAOImpl extends GenericDAOImpl<Store, StoreDomain, Integer>
 	@Override
 	public List<StoreDomain> findItemsBetweenPrices(BigDecimal minprice,
 			BigDecimal maxprice) {
+		
+		logger.debug("--- Start 'findItemsBetweenPrices' method for Store entity --- ");
 
 		TypedQuery<Store> query = entityManager
 				.createQuery(
@@ -35,5 +37,6 @@ public class StoreDAOImpl extends GenericDAOImpl<Store, StoreDomain, Integer>
 		}
 		return domainitems;
 	}
+	
 
 }

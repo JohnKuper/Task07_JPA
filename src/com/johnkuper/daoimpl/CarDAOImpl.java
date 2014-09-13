@@ -20,7 +20,7 @@ public class CarDAOImpl extends GenericDAOImpl<Car, CarDomain, Integer>
 	@Override
 	public List<CarDomain> findByName(String name) {
 
-		logger.debug("--- Start 'findByName' method for Car entity");
+		logger.debug("--- Start 'findByName' method for Car entity --- ");
 
 		TypedQuery<Car> query = entityManager.createQuery(
 				"SELECT c FROM Car c WHERE c.name = :name", Car.class);
@@ -30,7 +30,7 @@ public class CarDAOImpl extends GenericDAOImpl<Car, CarDomain, Integer>
 		if (cars.size() != 0) {
 			for (Car car : cars) {
 				cardomains.add(mapper.map(car, CarDomain.class));
-				logger.debug("Found by name: {}", car);
+				logger.debug("Found car with name {}: {}", name, car);
 			}
 		}
 		return cardomains;

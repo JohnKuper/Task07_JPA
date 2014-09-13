@@ -58,7 +58,7 @@ public class GenericDAOImpl<Entity, Domain extends DomainObject, IdType>
 		entityManager.getTransaction().begin();
 		entityManager.persist(entity);
 		entityManager.getTransaction().commit();
-		logger.debug("New {} entity: ", entity);
+		logger.debug("New entity: {} ", entity);
 
 	}
 
@@ -93,8 +93,9 @@ public class GenericDAOImpl<Entity, Domain extends DomainObject, IdType>
 
 	@Override
 	public Domain findOne(IdType id) {
-		logger.debug("--- Start 'findOne' method for {} entity ---",
-				entityType.getSimpleName());
+		logger.debug(
+				"--- Start 'findOne' method for {} entity with ID = {} ---",
+				entityType.getSimpleName(), id);
 		Entity entity = entityManager.find(entityType, id);
 		Domain domain = mapper.map(entity, domainType);
 		logger.debug("Found entity: {}", entity);
@@ -103,8 +104,9 @@ public class GenericDAOImpl<Entity, Domain extends DomainObject, IdType>
 
 	@Override
 	public void delete(IdType id) {
-		logger.debug("--- Start 'delete' method for {} entity ---",
-				entityType.getSimpleName());
+		logger.debug(
+				"--- Start 'delete' method for {} entity with ID = {} ---",
+				entityType.getSimpleName(), id);
 		Domain domain = findOne(id);
 		if (domain != null) {
 			Entity entity = entityManager.find(entityType, domain.getId());
@@ -119,9 +121,23 @@ public class GenericDAOImpl<Entity, Domain extends DomainObject, IdType>
 	}
 
 	@Override
-	public List<Domain> findAll(IdType limit) {
-		// TODO Auto-generated method stub
-		return null;
+	@SuppressWarnings("unchecked")
+	public List<Domain> findAll(int limit) {
+		logger.debug(
+				"--- Start 'findAll' method with limit = {} for {} entity ---",
+				limit, entityType.getSimpleName());
+		Query query = entityManager.createQuery(
+				"SELECT entity FROM " + entityType.getName() + " entity")
+				.setMaxResults(limit);
+		List<Entity> entities = query.getResultList();
+		List<Domain> domains = new ArrayList<Domain>();
+		if (entities.size() != 0) {
+			for (Entity entity : entities) {
+				domains.add(mapper.map(entity, domainType));
+				logger.debug("Found: {}", entity);
+			}
+		}
+		return domains;
 	}
 
 }
