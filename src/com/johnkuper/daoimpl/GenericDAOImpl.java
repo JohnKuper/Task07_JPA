@@ -12,12 +12,11 @@ import javax.persistence.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.johnkuper.daointerface.DomainObject;
 import com.johnkuper.daointerface.GenericDAO;
 import com.johnkuper.mapper.OrikaMapper;
 
-public class GenericDAOImpl<Entity, Domain extends DomainObject, IdType>
-		implements GenericDAO<Entity, Domain, IdType> {
+public class GenericDAOImpl<Entity, Domain, IdType> implements
+		GenericDAO<Entity, Domain, IdType> {
 
 	protected EntityManager entityManager;
 
@@ -107,9 +106,8 @@ public class GenericDAOImpl<Entity, Domain extends DomainObject, IdType>
 		logger.debug(
 				"--- Start 'delete' method for {} entity with ID = {} ---",
 				entityType.getSimpleName(), id);
-		Domain domain = findOne(id);
-		if (domain != null) {
-			Entity entity = entityManager.find(entityType, domain.getId());
+		Entity entity = entityManager.find(entityType, id);
+		if (entity != null) {
 			logger.debug("Entity for delete: {}", entity);
 			entityManager.getTransaction().begin();
 			entityManager.remove(entity);

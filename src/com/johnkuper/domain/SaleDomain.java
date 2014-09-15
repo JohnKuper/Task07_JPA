@@ -3,12 +3,11 @@ package com.johnkuper.domain;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import com.johnkuper.daointerface.DomainObject;
 import com.johnkuper.entity.Car;
 import com.johnkuper.entity.Customer;
 import com.johnkuper.entity.Merchant;
 
-public class SaleDomain implements DomainObject {
+public class SaleDomain {
 
 	private int id; // id
 	private Car car; //
@@ -36,7 +35,8 @@ public class SaleDomain implements DomainObject {
 				+ "%n" + customer + "%n" + merchant + "%n");
 	}
 
-	@Override
+	
+
 	public int getId() {
 		return id;
 	}

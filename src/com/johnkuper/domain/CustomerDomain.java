@@ -2,9 +2,7 @@ package com.johnkuper.domain;
 
 import java.util.Date;
 
-import com.johnkuper.daointerface.DomainObject;
-
-public class CustomerDomain implements DomainObject {
+public class CustomerDomain {
 
 	private int id; // id
 	private String custName; // name
@@ -37,11 +35,10 @@ public class CustomerDomain implements DomainObject {
 				+ dateOfBirth + "}";
 	}
 
-	@Override
 	public int getId() {
 		return id;
 	}
-	
+
 	public void setId(int id) {
 		this.id = id;
 	}

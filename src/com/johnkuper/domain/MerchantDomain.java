@@ -1,8 +1,7 @@
 package com.johnkuper.domain;
 
-import com.johnkuper.daointerface.DomainObject;
 
-public class MerchantDomain implements DomainObject {
+public class MerchantDomain {
 
 	private int id; // id
 	private String merchName; // name
@@ -26,7 +25,8 @@ public class MerchantDomain implements DomainObject {
 				+ merchPatronymic + "}";
 	}
 
-	@Override
+	
+
 	public int getId() {
 		return id;
 	}

@@ -1,8 +1,7 @@
 package com.johnkuper.domain;
 
-import com.johnkuper.daointerface.DomainObject;
 
-public class CarDomain implements DomainObject {
+public class CarDomain  {
 
 	private int id; // id
 	private String car_mark; // name
@@ -28,7 +27,8 @@ public class CarDomain implements DomainObject {
 				+ "; car_color = " + car_color + "}";
 	}
 
-	@Override
+	
+
 	public int getId() {
 		return id;
 	}
